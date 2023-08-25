@@ -1,0 +1,30 @@
+body {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+    background: #0B1113;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.75rem;
+}
+
+.highlight {
+    color: rgb(41, 121, 255);
+}
+
+.center {
+    text-align: center;
+}
+
+header {
+   padding-top: 9.5rem;
+   padding-bottom: 6rem;
+}
+
+section {
+   padding-top: 9rem;
+   padding-bottom: 9rem;
+}
