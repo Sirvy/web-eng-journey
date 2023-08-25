@@ -15,6 +15,15 @@ h1 {
     color: rgb(41, 121, 255);
 }
 
+.cyan {
+    color: cyan;
+}
+
+a {
+    text-decoration: none;
+    color: cyan;
+}
+
 .center {
     text-align: center;
 }
@@ -27,4 +36,169 @@ header {
 section {
    padding-top: 9rem;
    padding-bottom: 9rem;
+}
+
+.pillar-section {
+    padding: 5px 0;
+    margin-bottom: 100px;
+}
+
+.pillar-section .d-flex {
+    gap: 100px;
+    margin-top: 50px;
+}
+
+.pillar-component {
+    flex: 1 1 0;
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.pillar-component span {
+    display: block;
+    padding: 30px;
+    font-size: 30px;
+    color: #FFB902;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.pillar-component p {
+    text-align: center;
+}
+
+.corners {
+    position: absolute;
+    width: 100%;
+    transition-duration: 0.3s;
+    border-color: cyan;
+}
+
+.corners::before, .corners::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: cyan;
+    border-style: solid;
+    transition-duration: 0.3s;
+    transform: translateZ(0);
+}
+.corners::before {
+    left: 0;
+}
+.corners::after {
+    right: 0;
+}
+
+.corners.top {
+    top: 0;
+}
+.corners.top::before {
+    border-width: 1px 0 0 1px;
+}
+.corners.top::after {
+    border-width: 1px 1px 0 0;
+}
+
+.corners.bottom {
+    bottom: 7px;
+}
+.corners.bottom::before {
+    border-width: 0 0 1px 1px;
+}
+.corners.bottom::after {
+    border-width: 0 1px 1px 0;
+}
+
+
+
+.design-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 5px 0;
+    background: linear-gradient(197deg, rgba(11,17,19,1) 0%, rgba(11,17,19,1) 54%, rgb(0, 42, 58) 100%);
+}
+.design-section h2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline {
+    width: 80%;
+    height: auto;
+    max-width: 1000px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: #262626;
+    -webkit-box-shadow: 5px 5px 10px #181818, -5px -5px 10px #1f1f1f;
+    box-shadow: 5px 5px 10px #0e0e0e, -5px -5px 10px #1f1f1f;
+    border-radius: 5px;
+    color: white;
+    padding: 1.75rem;
+    transition: 0.4s ease;
+    overflow-wrap: break-word !important;
+    margin: 1rem 1rem 20px;
+    border-radius: 6px;
+}
+
+.timeline-component {
+    margin: 0px 20px 20px 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .pillar-section .d-flex {
+        gap: 10px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .pillar-section .d-flex {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .timeline {
+        display: grid;
+        grid-template-columns: 1fr 3px 1fr;
+    }
+    .timeline-middle {
+        position: relative;
+        background-image: linear-gradient(45deg, #21f2eb, #4062e9, #5c238a);
+        width: 3px;
+        height: 100%;
+    }
+    .main-middle {
+        opacity: 0;
+    }
+    .timeline-circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-image: linear-gradient(45deg, #21f2eb, #4062e9, #5c238a);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
 }
