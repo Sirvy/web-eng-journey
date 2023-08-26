@@ -225,14 +225,12 @@ function getContent($getChapter) {
             }
             
             body {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: Helvetica, sans-serif;
             }
             
             /* Style the header */
             .header {
-                background: url('https://images.pexels.com/photos/233698/pexels-photo-233698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000');
-                background-size: cover;
-                background-position: center;
+                background: url("https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png");
                 color: #fff;
                 text-shadow: 0 0 5px #303030;
                 padding: 20px;
@@ -267,6 +265,7 @@ function getContent($getChapter) {
                 -webkit-flex: 7;
                 -ms-flex: 7;
                 flex: 7;
+                padding-right: 10px;
             }
             
             ul li {
@@ -309,7 +308,7 @@ function getContent($getChapter) {
     </head>
     <body>
         <div class="header">
-            <h1>Java Course | <a href="/courses" class="link">Sigma Courses</a></h1>
+            <h1>Java Course | <a href="/" class="link">Web Engineering Journey</a></h1>
         </div>
         
         <div class="row">
