@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-size: cover;
+  background: url('https://images.pexels.com/photos/233698/pexels-photo-233698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000') center;
+  color: #fff;
+  text-shadow: 0 0 5px #303030;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 20px 0 20px 20px;
+}
+
+/* Left and right column */
+.column.side {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  background-color: #000;
+  color: #d0f0ff;
+}
+
+/* Middle column */
+.column.middle {
+  -webkit-flex: 7;
+  -ms-flex: 7;
+  flex: 7;
+}
+
+ul li {
+  text-align: right;
+  display: block;
+  padding: 10px;
+}
+
+ul li a {
+  color: #d0f0ff;
+  text-decoration: underline;
+}
+
+ul li a:hover {
+  color: #fff;
+}
+
+ul li.active {
+  background: #fff;
+  color: #000;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 800px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .column.side {
+    max-width: 100%;
+  }
+}
+
+a.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.link:hover {
+  text-decoration: underline;
+  color: #fff;
+}

@@ -26,6 +26,7 @@ const skillList = [
     },
     {
         title: "Software Engineering",
+        url: "courses/java",
         small: "(Design large architectures)",
         description: "Java Enterprise, JVM, Programming principles, Design patterns, UML, Architectures, Testing, Microservices, Spring, System integration"
     },
@@ -70,15 +71,18 @@ const SkillsSection = () => {
     const skillsHTML = [];
     let i = 0;
     skillList.forEach(skill => {
+        const link = skill.hasOwnProperty("url") ? <a href={skill.url}>Learn more</a> : null;
         if (i % 2 === 0) {
             skillsHTML.push(<div className="timeline-empty"></div>)
-            skillsHTML.push(<div className="timeline-middle"><div className="timeline-circle"></div></div>)
+            skillsHTML.push(<div className="timeline-middle">
+                <div className="timeline-circle"></div>
+            </div>)
             skillsHTML.push(
                 <div className="timeline-component timeline-content">
                     <h3>{skill.title}</h3>
                     <p className="small">{skill.small}</p>
                     <p>{skill.description}</p>
-                    <a href="#">Learn more</a>
+                    {link}
                 </div>
             )
         } else {
@@ -87,10 +91,12 @@ const SkillsSection = () => {
                     <h3>{skill.title}</h3>
                     <p className="small">{skill.small}</p>
                     <p>{skill.description}</p>
-                    <a href="#">Learn more</a>
+                    {link}
                 </div>
             )
-            skillsHTML.push(<div className="timeline-middle"><div className="timeline-circle"></div></div>)
+            skillsHTML.push(<div className="timeline-middle">
+                <div className="timeline-circle"></div>
+            </div>)
             skillsHTML.push(<div className="timeline-empty"></div>)
         }
         i++;

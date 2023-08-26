@@ -1,5 +1,6 @@
 import SkillsSection from "./SkillsSection";
 import {useEffect} from "react";
+import '../scss/index.scss';
 
 const Header = () => {
     return (
@@ -20,19 +21,24 @@ const TheThreePillars = () => {
             <div className="d-flex justify-content-around">
                 <div className="pillar-component">
                     <span>Software Engineering</span>
-                    <p>The ability to analyze, design and write testable, maintainable and readable code for large architecture of complex systems.</p>
+                    <p>The ability to analyze, design and write testable, maintainable and readable code for large
+                        architecture of complex systems.</p>
                     <div className="corners top"></div>
                     <div className="corners bottom"></div>
                 </div>
                 <div className="pillar-component">
                     <span>FullStack Development</span>
-                    <p>Understanding wide range of technologies, from FE to BE, databases, optimization, HTTP, system integration, communication protocols, infrastructure, securing performance and availability, clouds, DevOps, security.</p>
+                    <p>Understanding wide range of technologies, from FE to BE, databases, optimization, HTTP, system
+                        integration, communication protocols, infrastructure, securing performance and availability,
+                        clouds, DevOps, security.</p>
                     <div className="corners top"></div>
                     <div className="corners bottom"></div>
                 </div>
                 <div className="pillar-component">
                     <span>Web and Data Analysis</span>
-                    <p>Expertise in data and information retrieval, extraction and interpretation. Approximate searching, natural language processing, social network analysis, multimedia analysis and knowledge description.</p>
+                    <p>Expertise in data and information retrieval, extraction and interpretation. Approximate
+                        searching, natural language processing, social network analysis, multimedia analysis and
+                        knowledge description.</p>
                     <div className="corners top"></div>
                     <div className="corners bottom"></div>
                 </div>
@@ -48,9 +54,9 @@ function IndexPage() {
 
     return (
         <>
-            <Header />
-            <TheThreePillars />
-            <SkillsSection />
+            <Header/>
+            <TheThreePillars/>
+            <SkillsSection/>
         </>
     );
 }
