@@ -157,6 +157,12 @@
 */
 
 
+$title = 'Java Course';
+
+$description = '';
+
+$backgroundUrl = "https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png";
+
 $chapters = [
     'home' => 'Course Overview',
     'introduction' => 'Introduction',
@@ -165,7 +171,7 @@ $chapters = [
     'utils' => 'Utils',
     'system' => 'System package',
     'stream' => 'Stream API',
-    'concurrency' => 'Concurrency', // Advanced paralelism
+    'concurrency' => 'Concurrency', // Advanced parallelism
     'networking' => 'Networking',
     'javafx' => 'JavaFX',
     'database' => 'Database',
@@ -184,153 +190,4 @@ $chapters = [
     'new' => 'New Java versions features',
 ];
 
-$params = [];
-if (isset($_GET['page']) and !empty($_GET['page'])) {
-	$getPage = htmlspecialchars($_GET['page']);
-	$params = explode('/', $getPage);
-}
-$getChapter = $params[0];
-
-if (empty($getChapter)) {
-    $getChapter = 'home';
-}
-
-
-if (!isset($chapters[$getChapter]) || !file_exists('chapters/' . $getChapter . '.php')) {
-    header("HTTP/1.0 404 Not Found");
-    die();
-}
-
-function getContent($getChapter) { 
-    ob_start();
-    require_once('chapters/' . $getChapter . '.php');
-    return ob_get_clean(); 
-}
-?>
-<html lang="en">
-    <head>
-        <title><?= $chapters[$getChapter] ?> | Java Course</title>
-        <link rel="stylesheet" href="/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="https://sigma.noponfix.com/styles/prism-ok.css?v=1">
-        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" >
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-            
-            html, body {
-                margin: 0;
-                padding: 0;
-            }
-            
-            body {
-                font-family: Helvetica, sans-serif;
-            }
-            
-            /* Style the header */
-            .header {
-                background: url("https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png");
-                color: #fff;
-                text-shadow: 0 0 5px #303030;
-                padding: 20px;
-                text-align: center;
-                font-size: 20px;
-            }
-            
-            /* Container for flexboxes */
-            .row {
-                display: -webkit-flex;
-                display: flex;
-                align-items: stretch;
-            }
-            
-            /* Create three unequal columns that sits next to each other */
-            .column {
-                padding: 20px;
-                padding-right: 0;
-            }
-            
-            /* Left and right column */
-            .column.side {
-                -webkit-flex: 2;
-                -ms-flex: 2;
-                flex: 2;
-                background-color: #000;
-                color: #d0f0ff;
-            }
-            
-            /* Middle column */
-            .column.middle {
-                -webkit-flex: 7;
-                -ms-flex: 7;
-                flex: 7;
-                padding-right: 10px;
-            }
-            
-            ul li {
-                text-align: right;
-                display: block;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            
-            ul li a {
-                color: #d0f0ff;
-            }
-            
-            ul li.active {
-                background: #fff;
-                color: #000;
-            }
-            
-            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-            @media (max-width: 800px) {
-                .row {
-                    -webkit-flex-direction: column;
-                    flex-direction: column;
-                }
-                .column.side {
-                    max-width: 100%;
-                }
-            }
-            a.link {
-                color: #fff;
-                text-decoration: none;
-            }
-            a.link:hover {
-                text-decoration: underline;
-            }
-        </style>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <div class="header">
-            <h1>Java Course | <a href="/" class="link">Web Engineering Journey</a></h1>
-        </div>
-        
-        <div class="row">
-            <div class="column side">
-                <h2 style="text-align: center;">Contents</h2>
-                <ul>
-                <?php foreach ($chapters as $key => $chapter): ?>
-                    <?php if ($getChapter == $key): ?>
-                        <li class="active"><?= $chapter ?></li>
-                    <?php else: ?>
-                        <?php if (file_exists('chapters/' . $key . '.php')): ?>
-                            <li><a href="./<?= $key ?>"><?= $chapter ?></a></li>
-                        <?php else: ?>
-                            <li><?= $chapter ?></li>
-                        <?php endif ?>
-                    <?php endif ?>
-                <?php endforeach ?>
-                </ul>
-            </div>
-            <div class="column middle"><?= getContent($getChapter); ?></div>
-        </div>
-        
-        <script src="https://sigma.noponfix.com/scripts/prism-ok.js?v=1"></script>
-    </body>
-</html>
+require_once('../layout.php');
