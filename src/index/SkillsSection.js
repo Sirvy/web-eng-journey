@@ -31,9 +31,9 @@ const skillList = [
         description: "Java Enterprise, JVM, Programming principles, Design patterns, UML, Architectures, Testing, Microservices, Spring, System integration"
     },
     {
-        title: ".NET",
+        title: ".NET, Go, Kotlin, Scala",
         small: "(Modern Backend)",
-        description: "Modern programming, C#, LINQ, Entity Framework, MVC, Asynchronous programming"
+        description: "Modern programming, alternatives to Java, C#, LINQ, Entity Framework, MVC, Asynchronous programming"
     },
     {
         title: "DevOps",
