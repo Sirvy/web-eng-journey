@@ -2,70 +2,216 @@ const skillList = [
     {
         title: "Programming Fundamentals",
         small: "(How to code)",
-        description: "Number representation, Memory allocation, Data structures, Algorithms, C/C++"
+        description: "Knowing how computers work, how to code and how to solve algorithmic and computational problems.",
+        topics: [
+            "Computer science basics",
+            "Numeric representations",
+            "Memory allocation",
+            "Graph Theory",
+            "Data structures",
+            "Algorithms",
+            "C/C++",
+            "OOP",
+        ]
     },
     {
         title: "Math Fundamentals",
         small: "(Analytical thinking)",
-        description: "Mathematical analysis, Number theory, Linear algebra, Probability theory and Statistics"
+        description: "The basic mathematical knowledge for computer science and analysis. The pillar of analytical thinking.",
+        topics: [
+            "Mathematical prerequisites",
+            "Mathematical analysis",
+            "Number theory",
+            "Linear algebra",
+            "Probability theory",
+            "Statistics",
+        ]
     },
     {
         title: "Databases",
         small: "(All the data)",
-        description: "SQL, DB design, Optimization, Indexes, Transactions, Scalability, NoSQL, Teradata, BigData, Graph databases"
+        description: "Database systems for storing and efficient working with all kinds of data.",
+        topics: [
+            "Database design",
+            "SQL",
+            "Optimizations",
+            "Indexes",
+            "Transactions",
+            "Scalability",
+            "NoSQL",
+            "Teradata",
+            "BigData",
+            "Database models",
+        ]
     },
     {
         title: "PHP",
         small: "(80% of all websites)",
-        description: "Backend scripting, Persistence, REST API, Scraping/Crawling, Symfony, Nette, BE Security"
+        description: "Backend scripting with PHP, the language that carries over 70% of all the websites.",
+        topics: [
+            "The language",
+            "Persistence",
+            "REST API",
+            "Scraping and Crawling",
+            "Symfony framework",
+            "Nette framework",
+            "PHP security",
+        ]
     },
     {
         title: "JavaScript",
         small: "(The Web)",
-        description: "Frontend scripting, Node.js, React, Next.js, Web browsers, FE Security, WebSockets, TypeScript"
+        description: "Frontend scripting with JS, understanding web technologies and the web browser.",
+        topics: [
+            "HTML/CSS",
+            "JavaScript",
+            "React",
+            "Next.js",
+            "Node.js",
+            "Web browsers",
+            "FrontEnd security",
+            "WebSockets",
+            "TypeScript"
+        ]
     },
     {
         title: "Software Engineering",
         url: "courses/java",
         small: "(Design large architectures)",
-        description: "Java Enterprise, JVM, Programming principles, Design patterns, UML, Architectures, Testing, Microservices, Spring, System integration"
+        description: "Actual software engineering with Java technology.",
+        topics: [
+            "Software design and analysis",
+            "UML",
+            "Git",
+            "Java Enterprise",
+            "Design patterns",
+            "Best practices",
+            "Software architectures",
+            "Testing",
+            "Microservices",
+            "Spring, Hibernate",
+            "System integration"
+        ]
     },
     {
-        title: ".NET, Go, Kotlin, Scala",
+        title: "Modern backend.NET, Golang, Kotlin, Scala",
         small: "(Modern Backend)",
-        description: "Modern programming, alternatives to Java, C#, LINQ, Entity Framework, MVC, Asynchronous programming"
+        description: "Modern programming with alternatives to Java.",
+        topics: [
+            ".NET C#",
+            "LINQ",
+            "Entity framework",
+            "Asynchronous programming",
+            "Golang",
+            "Kotlin",
+            "Scala"
+        ]
     },
     {
         title: "DevOps",
         small: "(The infrastructure)",
-        description: "Hosting, Cloud, Virtualization, Docker, Kubernetes, IaaS, Load Balancing, CI/CD, Jenkins"
+        description: "Administrating the web infrastructure, deployment and pipelines.",
+        topics: [
+            "Shell scripting",
+            "Hosting",
+            "Cloud",
+            "Virtualization",
+            "Docker",
+            "Kubernetes",
+            "IaaS",
+            "Load balancing",
+            "CI/CD",
+            "Jenkins"
+        ]
     },
     {
         title: "Combinatorial Optimization",
         small: "(Solving the largest problems)",
-        description: "P vs. NP, Solving problems using heuristics, Simulated annealing, Simulated evolution, Genetic algorithms"
+        description: "Solving massive instances using heuristics and approximation.",
+        topics: [
+            "P vs. NP",
+            "Heuristics",
+            "Simulated annealing",
+            "Simulated evolution",
+            "Genetic algorithms"
+        ]
     },
     {
         title: "Distributed Systems",
         small: "(High performance computing)",
-        description: "Parallel programming, Parallel computing, Distributed computing and algorithms"
+        description: "Solving massive instances using high performance parallel and distributed computing systems.",
+        topics: [
+            "Parallel programming",
+            "OpenMP",
+            "Combinatorial searching",
+            "Parallel algorithms",
+            "Parallel computing",
+            "MPI",
+            "Combinatorial topologies",
+            "Distributed computing",
+            "Distributed algorithms"
+        ]
     },
     {
         title: "Web Analysis",
         small: "(Analyze the internet)",
-        description: "Information retrieval, Similarity search, Multimedia, Web mining, Python, Social network analysis, Recommender systems, Web semantics"
+        description: "Information retrieval, Similarity search, Multimedia, Web mining, Python, Social network analysis, Recommender systems, Web semantics",
+        topics: [
+            "Python",
+            "Information retrieval",
+            "Text mining",
+            "NLP",
+            "Similarity search",
+            "Multimedia",
+            "Web mining",
+            "Social network analysis",
+            "Recommender systems",
+            "Data stream mining",
+            "Web semantics",
+            "Knowledge graphs"
+        ]
     },
     {
         title: "Web Security",
         small: "(Protect the Web)",
-        description: "Encryption, Server-side, SQL injection, File upload, Client-side, XSS, Clickjacking, CSRF, JWT, OAuth, HTTP"
+        description: "Understanding the steps behind the most frequent attacks on web, being able to replicate them and to defend against them.",
+        topics: [
+            "Encryption",
+            "Server-side attacks",
+            "SQL injection",
+            "File uploads",
+            "Client-side attacks",
+            "XSS",
+            "Clickjacking",
+            "CSRF",
+            "JWT",
+            "OAuth",
+            "HTTP"
+        ]
     },
     {
         title: "Cloud Services",
         small: "(Moving to Clouds)",
-        description: "AWS security, AWS identity, IAM, AWS Lambda, databases, Azure analytics and computing services, Azure storage and networking"
+        description: "Deploying and working with cloud services such as AWS and Azure.",
+        topics: [
+            "AWS security",
+            "AWS identity",
+            "IAM",
+            "AWS lambda",
+            "AWS databases",
+            "Azure analytics",
+            "Azure computing services",
+            "Azure storage",
+            "Azure networking"
+        ]
     },
 ]
+
+const SignUpButton = () => {
+    return (
+        <button className='glowing-btn'><span className='glowing-txt'>Become Web Engineer</span></button>
+    )
+}
 
 const SkillsSection = () => {
     const skillsHTML = [];
@@ -80,8 +226,12 @@ const SkillsSection = () => {
             skillsHTML.push(
                 <div className="timeline-component timeline-content">
                     <h3>{skill.title}</h3>
-                    <p className="small">{skill.small}</p>
                     <p>{skill.description}</p>
+                    <ul>
+                        {skill.topics.map(skill => {
+                            return <li>{skill}</li>
+                        })}
+                    </ul>
                     {link}
                 </div>
             )
@@ -89,8 +239,12 @@ const SkillsSection = () => {
             skillsHTML.push(
                 <div className="timeline-component timeline-content">
                     <h3>{skill.title}</h3>
-                    <p className="small">{skill.small}</p>
                     <p>{skill.description}</p>
+                    <ul>
+                        {skill.topics.map(skill => {
+                            return <li>{skill}</li>
+                        })}
+                    </ul>
                     {link}
                 </div>
             )
@@ -108,6 +262,7 @@ const SkillsSection = () => {
             <div className="timeline">
                 {skillsHTML}
             </div>
+            <SignUpButton/>
         </section>
     );
 }

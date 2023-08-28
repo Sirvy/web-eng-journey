@@ -164,10 +164,10 @@ $description = '';
 $backgroundUrl = "https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png";
 
 $chapters = [
-    'home' => 'Course Overview',
-    'introduction' => 'Introduction',
+    'home' => 'Introduction',
     'swe101' => 'Software Engineering 101',
     'uml' => 'UML',
+    'git' => 'Git',
     'basics' => 'Java Basics',
     'oop' => 'OOP',
     'utils' => 'Utils',

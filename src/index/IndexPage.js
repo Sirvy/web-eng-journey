@@ -47,6 +47,7 @@ const TheThreePillars = () => {
     );
 }
 
+
 function IndexPage() {
     useEffect(() => {
         document.title = 'My Journey to Web Engineering';
