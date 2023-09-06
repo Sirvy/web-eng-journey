@@ -24,6 +24,9 @@ function getContent($getChapter)
     return ob_get_clean();
 }
 
+$useCode = false;
+$useMath = false;
+
 ?>
 <html lang="en">
 <head>
@@ -65,6 +68,10 @@ function getContent($getChapter)
     <div class="column middle"><?= getContent($getChapter); ?></div>
 </div>
 
-<script src="https://sigma.noponfix.com/scripts/prism-ok.js?v=1"></script>
+<?php if (useCode): ?><script src="https://sigma.noponfix.com/scripts/prism-ok.js?v=1"></script><?php endif ?>
+<?php if (useMath): ?>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<?php endif ?>
 </body>
 </html>
