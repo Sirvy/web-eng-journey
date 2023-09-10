@@ -28,21 +28,17 @@ function getContent($getChapter)
 <html lang="en">
 <head>
     <title><?= $chapters[$getChapter] ?> | <?= $title ?></title>
-    <link rel="stylesheet" href="/courses/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="https://sigma.noponfix.com/styles/prism-ok.css?v=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400">
+    <link rel="stylesheet" href="/courses/style.css?v=<?= date("dmYHis") ?>" type="text/css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= $description ?>">
-    <style>
-        .header {
-            background: url("<?= $backgroundUrl ?>");
-        }
-    </style>
     <meta charset="utf-8">
 </head>
 <body>
 <div class="header">
-    <h1><?= $title ?> | <a href="/" class="link">Web Engineering Journey</a></h1>
+    <h1><?= $title ?> | <a href="/" class="link highlight">Web Engineering</a></h1>
 </div>
 
 <div class="row">

@@ -9,12 +9,14 @@ html, body {
 }
 
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
 }
 
 /* Style the header */
 .header {
-    background: url("https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png");
+    /* background: url("https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png"); */
+    background: linear-gradient(180deg, rgba(11, 17, 19, 1) 0%, rgba(11, 17, 19, 1) 54%, rgb(0, 42, 58) 100%);
     color: #fff;
     text-shadow: 0 0 5px #303030;
     padding: 20px;
@@ -40,8 +42,9 @@ body {
     -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2;
-    background-color: #000;
+    background-color: #0b1113;
     color: #d0f0ff;
+    font-weight: 400;
 }
 
 /* Middle column */
@@ -89,4 +92,12 @@ a.link {
 
 a.link:hover {
     text-decoration: underline;
+}
+
+h1 a.link {
+    color: rgb(41, 121, 255);
+}
+
+h1 a.link:hover {
+    text-decoration: none;
 }
