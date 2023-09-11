@@ -167,11 +167,11 @@ section {
 
   .timeline-component {
     margin: 0px 20px 20px 20px;
-
-    &:last-of-type {
-      margin-bottom: 200px;
-    }
   }
+}
+
+.timeline div:nth-last-of-type(3), .timeline div:nth-last-of-type(2), .timeline div:nth-last-of-type(1) {
+  margin-bottom: 200px;
 }
 
 

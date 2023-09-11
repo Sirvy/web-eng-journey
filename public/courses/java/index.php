@@ -9,7 +9,7 @@
 - What is Java, background
 - History, editions, versions
 - main method
-- Setup, command line, compilation, running Java program
+- Setup, command line, compilation, running Java program, JAR
 + Java9-12, Java14 features
 + Programming languages
 + IT Fields, Java usage
@@ -17,7 +17,8 @@
 ## Basic syntax
 
 - Operators, priority, expression evaluation
-- keywords, conditions, loops, functions
+- keywords, conditions, loops, functions, lambda expressions
+- array, string
 - toString, equals, hashCode
 
 ## OOP
@@ -43,7 +44,7 @@
 - Threads
 - Fork&Join
 - Synchronization, time-dependent errors, planning, deadlocks
-- Advanced paralelism
+- Advanced parallelism
     - ProcessBuilder, ConcurrentHashMap, FutureTask, ...
 
 ## Networking
@@ -156,18 +157,16 @@
 
 */
 
+require_once('../layout.php');
 
-$title = 'Java Course';
+Course::$title = 'Java Course';
 
-$description = '';
+Course::$description = '';
 
-$backgroundUrl = "https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png";
+Course::$backgroundUrl = "https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png";
 
-$chapters = [
+Course::$chapters = [
     'home' => 'Introduction',
-    'swe101' => 'Software Engineering 101',
-    'uml' => 'UML',
-    'git' => 'Git',
     'basics' => 'Java Basics',
     'oop' => 'OOP',
     'utils' => 'Utils',
@@ -181,15 +180,20 @@ $chapters = [
     'depth' => 'Java in-depth', // JVM, ByteCode, GC, Classloader, 
     'building' => 'Building tools', // Maven, ANT, Gradle
     'advanced' => 'Advanced Java', // Modular architecture, Reflection, Annotations, Generics, NIO, Security
+    'new' => 'New Java versions features',
+
+    'swe101' => 'Software Engineering 101',
+    'uml' => 'UML',
+    'git' => 'Git',
+
     'principles' => 'Programming principles',
     'patterns' => 'Design patterns',
     'large' => 'Building large projects', // Dependencies, Artifactory, JDBC, ORM, REST, Testing, Authentication, Authorization, Microservices
-    'spring' => 'Spring, Spring Boot',
     'jee' => 'Enterprise Java', // JPA, JNDI, EJB, JSF, Beans, Servlet, ...
-    'am1' => 'Advanced architectures', // REST, HATEOAS, Service-oriented, Application Server Architecture, Caching, Concurrency, High availability, high performance, messaging
+    'spring' => 'Spring, Spring Boot',
+    'architectures' => 'Advanced architectures', // REST, HATEOAS, Service-oriented, Application Server Architecture, Caching, Concurrency, High availability, high performance, messaging
     'devops' => 'CI/CD, DevOPS, Clouds', // docker, kubernetes, clouds
     'integration' => 'System integration',
-    'new' => 'New Java versions features',
 ];
 
-require_once('../layout.php');
+$layout = new Layout();

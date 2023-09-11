@@ -75,6 +75,24 @@ const skillList = [
         ]
     },
     {
+        title: "Basic Networking",
+        small: "(The Internet)",
+        description: "Basic computer networking and communication.",
+        topics: [
+            "IP address",
+            "Networking models",
+            "Ethernet",
+            "Virtual networks",
+            "Switching and Routing",
+            "TCP and UDP",
+            "DNS",
+            "Network security, Firewalls",
+            "VPN",
+            "Application protocols (HTTP, SSH, FTP, ...)",
+            "Wireless"
+        ]
+    },
+    {
         title: "Software Engineering",
         url: "courses/java",
         small: "(Design large architectures)",
