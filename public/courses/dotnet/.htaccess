@@ -1,0 +1,15 @@
+RewriteEngine On
+
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTPS_HOST} !^sigma.noponfix.com/courses/java$ [NC]
+#RewriteRule ^(.*)$ https://sigma.noponfix.com/courses/java/$1 [L,R=301]
+
+Options -Indexes
+
+RewriteCond %{REQUEST_FILENAME} !/(css|fonts|ico|js)/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+
+RewriteRule /\.|^\.(?!well-known/) - [F]
+#RewriteRule !\.(pdf|eot|svg|ttf|woff|js|ico|gif|jpg|jpeg|png|css|rar|zip|tar\.gz|map)$ index.php [L]

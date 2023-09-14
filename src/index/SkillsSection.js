@@ -2,6 +2,7 @@ const skillList = [
     {
         title: "Programming Fundamentals",
         small: "(How to code)",
+        url: "courses/programming",
         description: "Knowing how computers work, how to code and how to solve algorithmic and computational problems.",
         topics: [
             "Computer science basics",
@@ -17,6 +18,7 @@ const skillList = [
     {
         title: "Math Fundamentals",
         small: "(Analytical thinking)",
+        url: "courses/math",
         description: "The basic mathematical knowledge for computer science and analysis. The pillar of analytical thinking.",
         topics: [
             "Mathematical prerequisites",
@@ -30,6 +32,7 @@ const skillList = [
     {
         title: "Databases",
         small: "(All the data)",
+        url: "courses/databases",
         description: "Database systems for storing and efficient working with all kinds of data.",
         topics: [
             "Database design",
@@ -42,11 +45,13 @@ const skillList = [
             "Teradata",
             "BigData",
             "Database models",
+            "Database server administration"
         ]
     },
     {
         title: "PHP",
         small: "(80% of all websites)",
+        url: "courses/php",
         description: "Backend scripting with PHP, the language that carries over 70% of all the websites.",
         topics: [
             "The language",
@@ -61,6 +66,7 @@ const skillList = [
     {
         title: "JavaScript",
         small: "(The Web)",
+        url: "courses/js",
         description: "Frontend scripting with JS, understanding web technologies and the web browser.",
         topics: [
             "HTML/CSS",
@@ -77,6 +83,7 @@ const skillList = [
     {
         title: "Basic Networking",
         small: "(The Internet)",
+        url: "courses/networking",
         description: "Basic computer networking and communication.",
         topics: [
             "IP address",
@@ -112,8 +119,9 @@ const skillList = [
         ]
     },
     {
-        title: "Modern backend.NET, Golang, Kotlin, Scala",
+        title: "Modern backend - .NET, Golang, Kotlin, Scala",
         small: "(Modern Backend)",
+        url: "courses/dotnet",
         description: "Modern programming with alternatives to Java.",
         topics: [
             ".NET C#",
@@ -128,10 +136,12 @@ const skillList = [
     {
         title: "DevOps",
         small: "(The infrastructure)",
+        url: "courses/devops",
         description: "Administrating the web infrastructure, deployment and pipelines.",
         topics: [
             "Shell scripting",
             "Hosting",
+            "Web Server administration",
             "Cloud",
             "Virtualization",
             "Docker",
@@ -145,6 +155,7 @@ const skillList = [
     {
         title: "Combinatorial Optimization",
         small: "(Solving the largest problems)",
+        url: "courses/cop",
         description: "Solving massive instances using heuristics and approximation.",
         topics: [
             "P vs. NP",
@@ -157,6 +168,7 @@ const skillList = [
     {
         title: "Distributed Systems",
         small: "(High performance computing)",
+        url: "courses/distributed",
         description: "Solving massive instances using high performance parallel and distributed computing systems.",
         topics: [
             "Parallel programming",
@@ -173,6 +185,7 @@ const skillList = [
     {
         title: "Web Analysis",
         small: "(Analyze the internet)",
+        url: "courses/analysis",
         description: "Information retrieval, Similarity search, Multimedia, Web mining, Python, Social network analysis, Recommender systems, Web semantics",
         topics: [
             "Python",
@@ -192,6 +205,7 @@ const skillList = [
     {
         title: "Web Security",
         small: "(Protect the Web)",
+        url: "courses/security",
         description: "Understanding the steps behind the most frequent attacks on web, being able to replicate them and to defend against them.",
         topics: [
             "Encryption",
