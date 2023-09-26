@@ -13,6 +13,15 @@ Course::$chapters = [
      * The frontend
      */
     'home' => 'Introduction',
+    /*
+     * Interaction design
+     * User interface design, GUI, UI design patterns
+     * Usability testing
+     * Form usability
+     * Accessibility
+     * Responsive design
+     */
+    'gui' => 'Interaction Design',
     'html' => 'HTML',
     'css' => 'CSS',
     /*

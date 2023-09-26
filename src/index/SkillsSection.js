@@ -69,6 +69,7 @@ const skillList = [
         url: "courses/js",
         description: "Frontend scripting with JS, understanding web technologies and the web browser.",
         topics: [
+            "GUI/UX design",
             "HTML/CSS",
             "JavaScript",
             "React",
