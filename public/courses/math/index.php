@@ -16,6 +16,7 @@ Course::$chapters = [
     /*
      * High-school math
      * Math logic, Set theory
+     * Relations, Binary relations, Equivalence
      * Polynomials
      * Logarithms
      * Basic algebra
@@ -34,10 +35,13 @@ Course::$chapters = [
      * Asymptotics
      * Derivatives
      * Integral
-     * Parcial derivative, gradient
-     * Multivariable integral
      */
     'analysis' => 'Analysis',
+    /*
+     * Partial derivative, gradient
+     * Multivariable integral
+     */
+    'analysis2' => 'Advanced analysis',
     /*
      * Numbers, relations
      * Recurrence, Master theorem
@@ -73,6 +77,9 @@ Course::$chapters = [
      * Interval estimation of parameters
      * Hypotheses testing
      * Linear regression
+     */
+    'statistics' => 'Statistics',
+    /*
      * Entropy and coding
      * Information theory
      * Markov chains
@@ -80,7 +87,7 @@ Course::$chapters = [
      * Poisson process
      * General random processes
      */
-    'statistics' => 'Statistics'
+    'statistics2' => 'Advanced statistics',
 ];
 
 $layout = new Layout();

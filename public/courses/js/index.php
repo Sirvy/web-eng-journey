@@ -21,7 +21,7 @@ Course::$chapters = [
      * Accessibility
      * Responsive design
      */
-    'gui' => 'Interaction Design',
+    'gui' => 'GUI design',
     'html' => 'HTML',
     'css' => 'CSS',
     /*
@@ -86,7 +86,22 @@ Course::$chapters = [
      */
     'realtime' => 'Realtime Web',
     'http2' => 'HTTP/2',
-    'typescript' => 'TypeScript'
+    'typescript' => 'TypeScript',
+    /*
+     * Games in general, history
+     * Game engines
+     * Assets
+     * Components
+     * Patterns
+     * Audio
+     * Space
+     * Physics
+     * Graphics
+     * AI
+     * Multiplayer
+     * Game design
+     */
+    'game' => 'Game development'
 ];
 
 $layout = new Layout();

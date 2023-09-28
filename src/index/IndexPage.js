@@ -72,7 +72,7 @@ const Background = () => {
                 this.y = Math.random() * h;
                 this.s = Math.random();
                 this.ang = Math.random() * 2 * Math.PI;
-                this.v = this.s * this.s / 4;
+                this.v = this.s * this.s;
             }
 
             move() {
