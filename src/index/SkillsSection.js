@@ -219,7 +219,8 @@ const skillList = [
             "CSRF",
             "JWT",
             "OAuth",
-            "HTTP"
+            "HTTP/HTTPS",
+            "Certificates, CAs"
         ]
     },
     {
