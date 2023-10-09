@@ -20,3 +20,14 @@ Semantic web
     <li>Reasoner - basically what ChatGPT does</li>
     <li>DBpedia - knowledge graph of wikipedia articles using RDF</li>
 </ul>
+
+
+<h2>Tutorial 1 notes</h2>
+- blank node example
+    - _:121
+- serialization formats (graph -> format)
+    - N-Triples
+        - dot at the end of each line
+    - Turtle
+        - blank nodes uses []
+    - RDF/XML

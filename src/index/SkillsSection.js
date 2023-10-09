@@ -238,6 +238,19 @@ const skillList = [
             "Azure networking"
         ]
     },
+    {
+        title: "Blockchain",
+        small: "(Web3)",
+        description: "",
+        topics: [
+            "Bitcoin",
+            "Web3",
+            "Smart contracts",
+            "Ethereum Virtual Machine",
+            "Wake framework",
+            "Proof of Stake"
+        ]
+    },
 ]
 
 const SignUpButton = () => {

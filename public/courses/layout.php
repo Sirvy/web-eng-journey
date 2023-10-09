@@ -1,5 +1,5 @@
 <?php
-    
+
 class Course
 {
     public static string $title = '';
@@ -106,6 +106,13 @@ class Layout
         </body>
         </html>
 
+        <?php
+    }
+
+    public static function renderImage(string $url, string $alt = ''): void
+    {
+        ?>
+        <img src="<?= $url ?>" alt="<?= $alt ?>"/>
         <?php
     }
 }

@@ -10,6 +10,7 @@ Course::$backgroundUrl = "https://www.toptal.com/designers/subtlepatterns/upload
 
 Course::$chapters = [
     'home' => 'Introduction',
+    'xml' => 'XML technology',
     'python' => 'Python Baiscs',
     'webspace' => 'Web Space',
     /*
