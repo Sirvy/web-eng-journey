@@ -1,5 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import IndexPage from "./index/IndexPage";
+import TestPage from "./index/TestPage";
 
 function App() {
     return (
@@ -8,6 +9,7 @@ function App() {
                 <Route path="/">
                     <Route index element={<IndexPage/>}/>
                 </Route>
+                <Route path="/test" element={<TestPage/>}/>
             </Routes>
         </BrowserRouter>
     );

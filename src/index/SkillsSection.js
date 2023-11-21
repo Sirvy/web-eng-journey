@@ -87,6 +87,7 @@ const skillList = [
         url: "courses/networking",
         description: "Basic computer networking and communication.",
         topics: [
+            "The internet, HTTP",
             "IP address",
             "Networking models",
             "Ethernet",

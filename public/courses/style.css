@@ -55,7 +55,7 @@ body {
     padding-right: 10px;
 }
 
-ul li {
+ul#menu li {
     text-align: right;
     display: block;
     padding-top: 10px;
@@ -64,11 +64,11 @@ ul li {
     padding-right: 10px;
 }
 
-ul li a {
+ul#menu li a {
     color: #d0f0ff;
 }
 
-ul li.active {
+ul#menu li.active {
     background: #fff;
     color: #000;
 }

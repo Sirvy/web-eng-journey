@@ -79,7 +79,7 @@ class Layout
         <div class="row">
             <div class="column side">
                 <h2 style="text-align: center;">Contents</h2>
-                <ul>
+                <ul id="menu">
                     <?php foreach (Course::$chapters as $key => $chapter): ?>
                         <?php if ($this->currentChapter == $key): ?>
                             <li class="active"><?= $chapter ?></li>
