@@ -75,7 +75,7 @@ const Background = () => {
         }
 
         loop();
-        setInterval(loop, 100);
+        //setInterval(loop, 100);
     }, []);
     return (
         <canvas id={"fireflies"}></canvas>

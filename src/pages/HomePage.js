@@ -1,9 +1,8 @@
 import {useEffect} from "react";
 import '../scss/index.scss';
 import Background from "../components/Background";
-import MarkupReader from "./MarkupReader";
-import {Link} from "react-router-dom";
-import SkillsSection from "./SkillsSection";
+import SkillsSection from "./parts/SkillsSection";
+import Navigation from "./parts/Navigation";
 
 const Header = () => {
     return (
@@ -51,7 +50,7 @@ const TheThreePillars = () => {
 }
 
 
-function IndexPage() {
+function HomePage() {
     useEffect(() => {
         document.title = 'My Journey to Web Engineering';
     }, []);
@@ -60,14 +59,11 @@ function IndexPage() {
         <>
             <Background/>
             <Header/>
-            <MarkupReader source="content/test.md"/>
-
-            <Link to="/">Default</Link>
-            <Link to="/test">Test</Link>
+            <Navigation/>
             <TheThreePillars/>
             <SkillsSection/>
         </>
     );
 }
 
-export default IndexPage;
+export default HomePage;

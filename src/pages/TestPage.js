@@ -1,4 +1,4 @@
-import MarkupReader from "./MarkupReader";
+import MarkupReader from "../components/MarkupReader";
 import {Link} from "react-router-dom";
 
 const TestPage = () => {

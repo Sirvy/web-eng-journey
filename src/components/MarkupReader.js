@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
 
 const MarkupReader = ({source}) => {
     const [markdown, setMarkdown] = useState('');
@@ -20,7 +21,17 @@ const MarkupReader = ({source}) => {
 
     return (
         <div className="markdown-container">
-            <ReactMarkdown>{markdown}</ReactMarkdown>
+            <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
+                urlTransform={uri => {
+                    if (uri.endsWith(".png") || uri.endsWith(".jpg")) {
+                        return `/${uri}`
+                    }
+                    return uri
+                }}
+            >
+                {markdown}
+            </ReactMarkdown>
         </div>
     );
 }
