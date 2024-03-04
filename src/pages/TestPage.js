@@ -5,6 +5,7 @@ const TestPage = () => {
     return (
         <>
             <MarkupReader source="content/test.md"/>
+            <MarkupReader source="content/math/algebra.md"/>
             <Link to={"/"}>Back</Link>
         </>
     );

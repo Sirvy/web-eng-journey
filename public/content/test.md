@@ -16,9 +16,7 @@ const x = 5;
 
 <a href="#">link</script>
 
-![Alt text](images/image-6.png)
-
-![img.png](images/img.png)
+![alt text](../images/image.png)
 
 <script>alert("hoja")</script>
 

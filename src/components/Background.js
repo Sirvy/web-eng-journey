@@ -74,7 +74,7 @@ const Background = () => {
             draw();
         }
 
-        loop();
+        [...Array(100)].forEach(e => loop());
         //setInterval(loop, 100);
     }, []);
     return (

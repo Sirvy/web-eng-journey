@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 const skillList = [
     {
         title: "Programming Fundamentals",
@@ -26,7 +28,7 @@ const skillList = [
             "Number theory",
             "Linear algebra",
             "Probability theory",
-            "Statistics",
+            {title: "Statistics", url: "math/statistics/statistics.md"},
         ]
     },
     {
@@ -276,8 +278,12 @@ const SkillsSection = () => {
                     <h3>{skill.title}</h3>
                     <p>{skill.description}</p>
                     <ul>
-                        {skill.topics.map(skill => {
-                            return <li>{skill}</li>
+                        {skill.topics.map(s => {
+                            if (typeof s === 'string') {
+                                return <li>{s}</li>
+                            } else {
+                                return <li><Link to="/test">{s.title}</Link></li>
+                            }
                         })}
                     </ul>
                     {link}
@@ -289,8 +295,12 @@ const SkillsSection = () => {
                     <h3>{skill.title}</h3>
                     <p>{skill.description}</p>
                     <ul>
-                        {skill.topics.map(skill => {
-                            return <li>{skill}</li>
+                        {skill.topics.map(s => {
+                            if (typeof s === 'string') {
+                                return <li>{s}</li>
+                            } else {
+                                return <li><Link to="/test">{s.title}</Link></li>
+                            }
                         })}
                     </ul>
                     {link}
