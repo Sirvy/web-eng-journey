@@ -80,7 +80,8 @@ const skillList = [
             "Web browsers",
             "FrontEnd security",
             "WebSockets",
-            "TypeScript"
+            "TypeScript",
+            "Creative coding"
         ]
     },
     {
