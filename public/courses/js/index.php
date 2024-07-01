@@ -101,7 +101,12 @@ Course::$chapters = [
      * Multiplayer
      * Game design
      */
-    'game' => 'Game development'
+    'game' => 'Game development',
+
+    /*
+     * Algorithmic Visuals
+     **
+    'creative' => 'Creative coding',
 ];
 
 $layout = new Layout();
