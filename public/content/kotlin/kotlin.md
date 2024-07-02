@@ -500,8 +500,38 @@ fun log(e: Error) = when(e) {
 ```
 
 Generics
+- generic types in java are invariant (`List<String>` is not a subtype of `List<Object>`), that's why it needs wildcards (`<? extends E>`)
+- contravariant, covariant, invariant
+- Transformation: Consumer `in`, Producer `out`
+- `Function<*, String>` = `Function<in Nothing, String>`
+- `Function<Int, *>` = `Function<Int, out Any?>`
+- `Function<*, *>` = `Function<in Nothing, out Any?>`
 
-// TODO
+```Kotlin
+class Box<T>(t: T) {
+    var value = t
+}
+val box: Box<Int> = Box<Int>(1)
+val box = Box(1) // if type can be inferred
+
+interface Comparable<in T> {
+    operator fun compareTo(other: T): Int
+}
+fun demo(x: Comparable<Number>) {
+    x.compareTo(1.0) // 1.0 has type Double, which is a subtype of Number
+    // Thus, you can assign x to a variable of type Comparable<Double>
+    val y: Comparable<Double> = x // OK!
+}
+
+// Generic functions
+fun <T> somethingList(item: T): List<T> { ... }
+fun <T> T.basicFunction(): String { ... }
+fun <T> MutableList<T>.swap(idx1: Int, idx2: Int) {
+    val tmp = this[idx1]
+    this[idx1] = this[idx2]
+    this[idx2] = tmp
+}
+```
 
 Nested classes
 
