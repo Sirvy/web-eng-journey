@@ -254,13 +254,34 @@ data class User(val name: String, val id: Int)
 println(User("bobika", 5)) // User(name=Bobika, id=5)
 ```
 
-Getters and Setters
-- On properties
+Properties
 
 ```Kotlin
 class Rectangle(val width: Int, val height: Int) {
     val area: Int
         get() = this.width * this.height
+        set(value: Int) {
+            if (value > 0) field = value
+        }
+}
+
+class Table {
+    private var _table: Map<String, Int>? = null
+    public val table: Map<String, Int>
+        get() {
+            if (_table == null) _table = HashMap()
+            return _table ?: throw AssertionError("Set to null by another thread")
+        }
+}
+
+public class Test {
+    lateinit var subject: TestSubject // initializable later
+    @SetUp fun setup() {
+        subject = TestSubject()
+    }
+    fun test() {
+        if (!subject.isInitialized) error
+    }
 }
 ```
 
@@ -319,12 +340,111 @@ class FilledRectangle : Rectangle() {
 ```
 
 Interfaces
+- methods can contain implementation
+- interface can contain properties
+- difference between interface and abstract class is that interface cant store state
 
-// TODO
+```Kotlin
+interface MyInterface {
+    val prop: Int
+    val propImp: String
+        get() = "foo"
+
+    fun bar()
+    fun foo() { println(prop) }
+}
+class Child : MyInterface {
+    override val prop: Int = 29
+    override fun bar() { ... }
+}
+
+// interface inheritance
+interface Named {
+    val name: String
+}
+interface Person : Named {
+    val firstName: String
+    val lastName: String
+    override val name: String
+        get() = "$firstName $lastName"
+}
+data class Employee(
+    override val firstName: String,
+    override val lastName: String,
+    val position: Position
+) : Person
+
+// multiple inheritance
+interface A {
+    fun foo() { ... }
+    fun bar() { ... }
+}
+interface B {
+    fun foo() { ... } 
+    fun bar() { ... }
+}
+class Test : A {
+    override fun bar() { ... }
+}
+class FinalTest : A, B {
+    override fun foo() {
+        super<A>.foo()
+        super<B>.foo()
+    }
+    override fun bar() {
+        super<B>.bar()
+    }
+}
+```
+
+Functional interface
+- interface with only one abstract method
+- can have multiple non-abstract members
+
+```Kotlin
+fun interface KRunnable {
+    fun invoke()
+}
+
+fun interface IntPredicate {
+    fun accept(i: Int): Boolean
+}
+val isEven = object : IntPredicate {
+    override fun accept(i: Int): Boolean = i % 2 == 0
+}
+val isEven = IntPredicate { it % 2 == 0 } // SAM conversion
+
+println("Is 7 even? - ${isEven.accept(7)}")
+
+// Callable reference
+fun interface Printer {
+    fun print()
+}
+documentStorage.addPrinter(::Printer)
+
+// type alias
+typealias IntPredicate = (i: Int) -> Boolean
+val isEven: IntPredicate = { it % 2 == 0 }
+println("Is 7 even? - ${isEven(7}")
+```
 
 Visibility 
+- package members - functions, properties, classes, objects and interfaces declared at top-level inside a package are
+    - `public` by default
+    - `private` - visible only inside the file
+    - `internal` - visible in the same module
+    - `protected` - not available for top-level declarations
+ - class members
+    - `private` - visible inside class
+    - `protected` - visible in subclasses
+    - `internal` - any client inside this module who sees the declaring class, sees internal members
+    - `public` - any client who sees the declaring class, sees public members
+  - outer class doesnt see `private` members of its inner classes
+  - constructors are `public` by default, sealed classes have `protected` constructors by default
 
-// TODO
+```Kotlin
+class Test private constructor(a: Int) {} // hiding the primary constructor
+```
 
 Extensions
 
