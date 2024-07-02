@@ -598,12 +598,36 @@ interface Printable { ... }
 value class Name(val s: String) : Printable { ... }
 ```
 
-// TODO
+Object expression
+- anonymous objects, similar to JS objects
+
+```Kotlin
+val greeting = object {
+    val hello = "Hello"
+    val hi = "hi"
+    override fun toString() = "$hello $hi"
+}
+println(greeting)
+
+window.addMouseListener(object : MouseAdapter() { override fun mouseClicked(e: MouseEvent) { ... } })
+```
 
 Delegation
+- composition pattern alternative to inheritance
+- use to implement multiple interfaces using existing implementations or to enhance existing implementation
 
-// TODO
+```Kotlin
+interface Producer { fun produce(): String }
+class ProducerImpl : Producer { override fun produce() = "ProducerImpl" }
+class EnhancedProducer(private val d: Producer) : Producer by d {
+    override fun produce() = "${delegate.produce()} and enhanced"
+}
 
+val producer = ProducerImpl()
+println(EnhancedProducer(producer).produce())
+
+class CompositeService : UserService by UserServiceImpl(), MessageService by MessageServiceImpl()
+```
 
 
 ## Null safety
