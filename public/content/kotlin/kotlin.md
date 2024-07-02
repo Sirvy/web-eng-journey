@@ -447,12 +447,57 @@ class Test private constructor(a: Int) {} // hiding the primary constructor
 ```
 
 Extensions
+- to extend a class or interface with new functionality without having to inherit the class or use Decorator
+- extensions can be called and treated like functions that had been there the whole time
+- there are also extension properties
+- extensions dont insert members into classes or modify the classes, they only define new callable function with dot notation on the variable type
 
-// TODO
+```Kotlin
+fun MutableList<Int>.swap(idx1: Int, idx2: Int) {
+    val tmp = this[idx1]
+    this[idx1] = this[idx2]
+    this[idx2] = tmp
+}
+list.swap(0, 2)
+
+class Shape
+fun Shape.getName() = "Shape"
+
+fun Any?.toString(): String {
+    if (this == null) return null
+    return this.toString()
+}
+
+val List<Int>.numbaFive: Int = 5 // Error, cant initialize because its not a member!
+val <T> List<T>.lastIndex: Int
+    get() = size - 1
+```
 
 Sealed classes
+- All inherited classes are known in compile-time, no other subclass will appear
+- use when limited class inheritance is desired, type-safe design is required or when working with closed PAI
+- sealed class is always abstract class
 
-// TODO
+```Kotlin
+selaed interface Error
+sealed class IOError(): Error
+class FileError(): IOError
+class DBError(): IOError
+
+sealed class Error(val message: String) {
+    class NetworkError : Error("Network error")
+    class FileError : Error("File error")
+    class UnknownError : Error("Unknown error")
+}
+val errors = listOf(Error.NetworkError(), Error.DatabaseError(), Error.UnknownError())
+errors.forEach { println(it.message) }
+fun log(e: Error) = when(e) {
+    is Error.NetworkError -> println("Network error occured")
+    is Error.FileError -> println("File error occured")
+    is Error.UnknownError -> println("wht")
+    // no else needed
+}
+```
 
 Generics
 
