@@ -506,6 +506,7 @@ Generics
 - `Function<*, String>` = `Function<in Nothing, String>`
 - `Function<Int, *>` = `Function<Int, out Any?>`
 - `Function<*, *>` = `Function<in Nothing, out Any?>`
+- default upper bound constraint is `Any?`
 
 ```Kotlin
 class Box<T>(t: T) {
@@ -531,17 +532,71 @@ fun <T> MutableList<T>.swap(idx1: Int, idx2: Int) {
     this[idx1] = this[idx2]
     this[idx2] = tmp
 }
+
+fun <T: Comparable<T>> sort(list: List<T>) { ... } // upper bound generic constraint
+
+interface Game<T> {
+    override fun save(x: T1 & Any): T1 & Any // Definitely not null, alternative to @NotNull annotation
+}
 ```
 
-Nested classes
-
-// TODO
-
 Enum
+- each enum constant is an object
+  
+```Kotlin
+enum class Direction {
+    NORTH, SOUTH, WEST, EAST
+}
 
-// TODO
+enum class Color(val rgb: Int) {
+    RED(0xFF0000), GREED(0x00FF00), BLUE(0x0000FF)
+}
+
+enum class ProtocolState {
+    WAITING { ... },
+    TALKING { ... }
+}
+
+enum class IntArithmetics : BinaryOperator<Int>, IntBinaryOperator {
+    PLUS { override fun apply(t: Int, u: Int): Int = t + u }
+    TIMES { override fun apply(t: Int, u: Int): Int = t * u }
+    override fun applyAsInt(t: Int, u: Int) = apply(t, u)
+}
+
+for (color in RGB.entries) println(color.toString())
+println("First color is ${RGB.valueof("RED")}")
+println(RGB.RED.name) // RED
+println(RGB.RED.ordinal) // 0
+```
 
 Value classes
+- wrapping a value in a class to create more domain-specific type
+- inline value classes are optimized and dont introduce as much overhead as an actuall class wrapper would
+- inline classes are always `final`
+
+```Kotlin
+@JvmInline // for JVM backends
+value class Password(private val s: String)
+
+val securePassword = Password("blabla")
+
+@JvmInline
+value class Person(private val fullName: String) {
+    init { ... }
+    constructor(firstName: String, lastName: String) : this("$firstName $lastName") { ... }
+    val length: Int
+        get() = fullName.length
+    fun greet() {
+        println("hello $fullName")
+    }
+}
+
+val nam1 = Person("Kotlin", "Mascot")
+
+interface Printable { ... }
+@JvmInline
+value class Name(val s: String) : Printable { ... }
+```
 
 // TODO
 
