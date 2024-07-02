@@ -47,6 +47,9 @@ const val TITLE = "Hello" // compile-time const
 val readOnly = "mememe" // runtime const
 var foo = "bar" // variable
 var str: String = "pepe"
+
+if (a == b) { ... } // structural equality, checks equals()
+if (a === b) { ... } // referential equality, check if two references point to the same object
 ```
 
 String
@@ -628,6 +631,10 @@ println(EnhancedProducer(producer).produce())
 
 class CompositeService : UserService by UserServiceImpl(), MessageService by MessageServiceImpl()
 ```
+
+Delegated properties
+
+// TODO
 
 
 ## Null safety
