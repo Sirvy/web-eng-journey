@@ -31,6 +31,15 @@ fun main() {
 }
 ```
 
+Packages
+- `kotlin.*` etc are imported to every kotlin file by default
+
+```Kotlin
+package org.example
+
+import org.test.Message as TestMessage
+```
+
 Variables
 
 ```Kotlin
@@ -256,8 +265,58 @@ class Rectangle(val width: Int, val height: Int) {
 ```
 
 Inheritance
+- classes are `final` by default, use `open` to make them inheritable
+- Base class initialization is done before derived class initialization (base class arguments evaluation is done before that)
+  
+```Kotlin
+// Basic use
+open class Base(p: Int)
+class Derived(p: Int) : Base(p)
 
-// TODO
+class MyView : View {
+    constructor(ctx: Context) : super(ctx)
+}
+
+// Overriding methods
+open class Shape {
+    open fun draw() { ... }
+    fun fill() { ... }
+}
+class Circle() : Shape() {
+    override fun draw() { super.draw() }
+}
+open class Rectangle() : Shape() {
+    final override fun draw() { ... } // No more overriding
+}
+
+// Overriding properties
+open class Shape {
+    open val vertexCount: Int = 0
+}
+class Rectangle : Shape() {
+    override val vertexCount = 4
+}
+
+// Initialization order example
+open class Base(val name: String) {
+    init { println("base init") }
+    open val size: Int = name.length.also { println("base size init: $it") }
+}
+class Derived(name: String, val lastName: String) : Base(name.also { println("Base argument initialization") } ) {
+    init { println("Derived class initialization") }
+    override val size: Int = (super.size + lastName.length).also { println("Derived size init: $it") }
+}
+
+// Inner class calling outer class method
+class FilledRectangle : Rectangle() {
+    override fun draw() { ... }
+    inner class Filler {
+        fun fill() {
+            super@FilledRectangle.draw()
+        }
+    }
+}
+```
 
 Interfaces
 
