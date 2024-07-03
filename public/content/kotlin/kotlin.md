@@ -1,6 +1,7 @@
 # Kotlin
 
 A modern, concise and safe alternative to Java.
+Docs: https://kotlinlang.org/docs/home.html
 
 ## Introduction
 
@@ -618,6 +619,7 @@ window.addMouseListener(object : MouseAdapter() { override fun mouseClicked(e: M
 Delegation
 - composition pattern alternative to inheritance
 - use to implement multiple interfaces using existing implementations or to enhance existing implementation
+- a class (or a property) delegates operation to another object to take care of
 
 ```Kotlin
 interface Producer { fun produce(): String }
@@ -630,11 +632,70 @@ val producer = ProducerImpl()
 println(EnhancedProducer(producer).produce())
 
 class CompositeService : UserService by UserServiceImpl(), MessageService by MessageServiceImpl()
+
+
+interface ClosedShape { fun area(): Int }
+class Rectangle(val width: Int, val height: Int) : ClosedShape {
+    override fun area() = width * height
+}
+// ClosedShape implementation is delegated to Rectangle object "bounds"
+class Window(private val bounds: Rectangle) : ClosedShape by bounds
 ```
 
 Delegated properties
+- to cover Lazy properties (computed only on first access)
+- observable properties (listeners are notified about changes of this property)
+- storing properties in a map (useful for JSON parsing etc)
+- to write custom delegate, a delegate property is a class that provide `getValue()` and `setValue()` instead of an interface
 
-// TODO
+```Kotlin
+// lazy delegate loads on first access and caches value
+class DatabaseBacker(userId: String) {
+    val name: String by lazy {
+        queryForValue("SELECT name FROM users WHERE userId = :userId", mapOf("userId" to userId))
+    }
+}
+
+// observable delegate triggers lambda each time a value is changed
+class ObservedProperty {
+    var name: String by Delegates.observable("<not set>") {
+        prop, old, new -> println("Old value: $old, New value: $new")
+    }
+}
+
+// storing properties in map
+class User(val map: Map<String, Any?>) {
+    val name: String by map
+    val age: Int by map
+}
+val user = User(mapOf(
+    "name" to "john doe",
+    "age" to 25
+))
+println(user.name)
+println(user.age)
+
+
+// custom delegate
+import kotlin.reflect.KProperty
+
+class Example {
+    var p: String by Delegate()
+}
+
+class Delegate {
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
+        return "$thisRef, thank you for delegating '${property.name}' to me!"
+    }
+    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {
+        println("$value has been assigned to '${property.name}' in $thisRef.")
+    }    
+}
+
+val e = Example()
+println(e.p) // Delegate's getValue() is called "Example@33a17727, thank you for delegating 'p' to me!"
+```
+
 
 
 ## Null safety
