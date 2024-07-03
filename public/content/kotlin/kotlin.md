@@ -900,25 +900,46 @@ person.company?.address?.country // returns null if any is null
 println(text?.length ?: 0)
 ```
 
-## Parallel programming
+## Coroutines
 
-### Asynchronous programming
+Asynchronous programming prevents application from blocking and allows for scaling. 
 
-Threading 
+Common techniques are:
+- Threading
+    - most well known, true parallelism
+    - expensive (switching, management), limited number of threads, not supported everywhere, difficult to maintain (deadlock, race conditions, ...)
+- Callbacks
+      - a function invokes a callback once it's finished, elegant alternative to threads, common in event-loop architectures (JS)
+      - nested callbacks (callback hell), complicated error handling
+- Futures, promises
+      - after a call, we are promised that at some point it will return an object called a Promise which can be operated on
+      - different programming model similar to callbacks (from top-down to compositional model with chained calls), complicated error handling
+- Reactive Extensions (Rx)
+      - we think of data as infinite stream that can be observed and operated on, similar to Futures, nicer approach to error handling
+      - requires new way of thinking about programming model
+- Coroutines
+      - top-down, a function can suspend its execution at some point and resume later on
+      - writing non-blocking code is very similar to writing blocking code, programming model doesn't change
+      - `suspendable function` will execute, pause and will resume at some point in time, not blocking the main thread
 
-// TODO
+```Kotlin
+suspend fun preparePost(): Token { return suspendCoroutine { ... } }
+fun postItem(item: Item) {
+    launch {
+        val token = preparePost()
+        val post = submitPost(token, item)
+        processPost(post)
+    }
+}
 
-Callbacks
-
-// TODO
-
-Futures and promises
-
-// TODO
-
-### Coroutines
-
-// TODO
+fun main() = runCor {
+    launch {    // start coroutine
+        delay(1000L)
+        println("World!)
+    }
+    println("Hello")
+}
+```
 
 ## Annotations
 
