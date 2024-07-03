@@ -975,6 +975,75 @@ annotation class Special(val why: String)
 @Special("example") class Foo {}
 ```
 
+Simple validator use case
+- Consider the object Item is valid if `amount` is positive and `name` is alice or bob
+
+```Kotlin
+@Target(AnnotationTarget.FIELD)
+annotation class Positive
+
+@Target(AnnotationTarget.FIELD)
+annotation class AllowedNames(val names: Array<String>)
+
+class Item(
+  @Positive val amount: Float, 
+  @AllowedNames(["Alice", "Bob"]) val name: String)
+
+class Validator() {
+    fun isValid(item: Item): Boolean {
+        val fields = item::class.java.declaredFields
+        for (field in fields) {
+            for (annotation in field.annotations) {
+                val value = field.get(item)
+                if (field.isAnnotationPresent(Positive::class.java)) { ... }
+                if (field.isAnnotationPresent(AllowedNames::class.java)) {
+                    val allowedNames = field.getAnnotation(AllowedNames::class.java)?.names
+                    ...
+                }
+            }
+        }
+    }
+}
+
+val item = Item(amount = 1.0f, name = "Bob")
+val validator = Validator()
+println("Is instance valid? ${validator.isValid(item)}")
+```
+
 ## Reflection
 
-// TODO
+A set of language and library features that allows you to introspect the structure of the program at runtime.
+
+First, the reflection must be enabled.
+
+Kotlin:
+```Kotlin
+dependencies {
+    implementation(kotlin("reflect"))
+}
+```
+Maven:
+```XML
+<dependencies>
+  <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-reflect</artifactId>
+  </dependency>
+</dependencies>
+```
+
+```Kotlin
+val c = MyClass:class
+
+val widget: Widget = ...
+assert(widget is GoodWidget) { "Bad widget: ${widget::class.qualifiedName}" }
+
+fun isOdd(x: Int) = ...
+val numbers = listOf(...)
+println(numbers.filter(::isOdd))
+
+val x = 1
+println(::x.get())
+println(::x.name)
+```
+
