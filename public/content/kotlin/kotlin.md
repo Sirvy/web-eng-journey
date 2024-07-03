@@ -943,11 +943,37 @@ fun main() = runCor {
 
 ## Annotations
 
+Means of attaching metadata to code.
+
+Kotlin annotations are 100% compatible with Java annotations.
+
+- `@Target` kinds of elements which can be annotated with this annotation
+- `@Retention` whether the annotation is stored in the compiled class files and is visible through reflection at runtime
+- `@Repeatable` allows using same annotation on a single element multiple times
+- `@MustBeDocumented` annotation is part of public API and should be included in the generated API documentation
+
 ```Kotlin
 annotation class Fancy
-```
 
-// TODO
+// with additional attributes
+@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION,
+        AnnotationTarget.TYPE_PARAMETER, AnnotationTarget.VALUE_PARAMETER,
+        AnnotationTarget.EXPRESSION)
+@Retention(AnnotationRetention.SOURCE)
+@MustBeDocumented
+annotation class Fancy
+
+// Usage
+@Fancy class Foo {
+    @Fancy fun bar(@Fancy foo: Int): Int {
+        return (@Fancy 1)
+    }
+}
+
+annotation class Special(val why: String)
+
+@Special("example") class Foo {}
+```
 
 ## Reflection
 
