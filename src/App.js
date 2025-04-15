@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import TestPage from "./pages/TestPage";
 import CoursesPage from "./pages/CoursesPage";
+import CSharpPage from "./pages/CSharpPage";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Route index element={<CoursesPage/>}/>
                 </Route>
                 <Route path="/test" element={<TestPage/>}/>
+                <Route path="/csharp" element={<CSharpPage/>}/>
             </Routes>
         </BrowserRouter>
     );

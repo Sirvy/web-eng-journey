@@ -59,7 +59,7 @@ function HomePage() {
         <>
             <Background/>
             <Header/>
-            {/* <Navigation/> */}
+            <Navigation/>
             <TheThreePillars/>
             <SkillsSection/>
         </>
