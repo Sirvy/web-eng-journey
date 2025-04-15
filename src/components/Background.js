@@ -75,7 +75,7 @@ const Background = () => {
         }
 
         [...Array(100)].forEach(e => loop());
-        //setInterval(loop, 100);
+        setInterval(loop, 100);
     }, []);
     return (
         <canvas id={"fireflies"}></canvas>

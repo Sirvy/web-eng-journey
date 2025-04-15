@@ -8,9 +8,9 @@ const Header = () => {
     return (
         <header>
             <div className="container px-4 text-center">
-                <h1 className="center">My journey to</h1>
+                <h1 className="center">The journey to</h1>
                 <h1 className="center highlight">Web Engineering</h1>
-                <p className="lead">Tracking all the skills and knowledge I gain on my way to becoming a Web Engineer.</p>
+                <p className="lead">Learn to think like an architect. Build like an engineer. Solve problems like a scientist.</p>
             </div>
         </header>
     );
@@ -31,7 +31,7 @@ const TheThreePillars = () => {
                 <div className="pillar-component">
                     <span>FullStack Development</span>
                     <p>Understanding wide range of technologies, from FE to BE, databases, optimization, HTTP, system
-                        integration, communication protocols, infrastructure, securing performance and availability,
+                        integration, communication protocols, infrastructure, performance and availability,
                         clouds, DevOps, security.</p>
                     <div className="corners top"></div>
                     <div className="corners bottom"></div>
@@ -59,7 +59,7 @@ function HomePage() {
         <>
             <Background/>
             <Header/>
-            <Navigation/>
+            {/* <Navigation/> */}
             <TheThreePillars/>
             <SkillsSection/>
         </>

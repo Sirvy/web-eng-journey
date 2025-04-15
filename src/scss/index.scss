@@ -153,16 +153,20 @@ section {
 
   .timeline-content {
     padding: 20px;
-    background: #262626;
-    -webkit-box-shadow: 5px 5px 10px #181818, -5px -5px 10px #1f1f1f;
-    box-shadow: 5px 5px 10px #0e0e0e, -5px -5px 10px #1f1f1f;
-    border-radius: 5px;
+    // background: #262626;
+    // -webkit-box-shadow: 5px 5px 10px #181818, -5px -5px 10px #1f1f1f;
+    // box-shadow: 5px 5px 10px #0e0e0e, -5px -5px 10px #1f1f1f;
+    // border-radius: 5px;
     color: white;
     padding: 1.75rem;
     transition: 0.4s ease;
     overflow-wrap: break-word !important;
     margin: 1rem 1rem 20px;
     border-radius: 6px;
+
+    h3 {
+      color: #FFB902;
+    }
   }
 
   .timeline-component {

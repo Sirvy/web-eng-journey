@@ -18,7 +18,7 @@ const skillList = [
         ]
     },
     {
-        title: "Math Fundamentals",
+        title: "Math for Engineers",
         small: "(Analytical thinking)",
         url: "courses/math",
         description: "The basic mathematical knowledge for computer science and analysis. The pillar of analytical thinking.",
@@ -154,7 +154,28 @@ const skillList = [
             "IaaS",
             "Load balancing",
             "CI/CD",
-            "Jenkins"
+            "Jenkins",
+            "Infrastructure as code",
+            "Logging and monitoring",
+        ]
+    },
+    {
+        title: "Microservices",
+        small: "Highly performant and scalable systems",
+        url: "courses/microservices",
+        description: "Designing and implementing microservices, the modern way of building large systems.",
+        topics: [
+            "Microservices",
+            "SOA, DDD",
+            "Integration and communication",
+            "Deployment and orchestration",
+            "Event-driven architecture",
+            "Load balancing",
+            "Performance",
+            "Sharding and partitioning",
+            "Caching, CDN",
+            "Streaming, Messaging, Pub/Sub",
+            "Edge computing",
         ]
     },
     {
@@ -268,7 +289,8 @@ const SkillsSection = () => {
     const skillsHTML = [];
     let i = 0;
     skillList.forEach(skill => {
-        const link = skill.hasOwnProperty("url") ? <a href={skill.url}>Learn more</a> : null;
+        //const link = skill.hasOwnProperty("url") ? <a href={skill.url}>Learn more</a> : null;
+        const link = null;
         if (i % 2 === 0) {
             skillsHTML.push(<div className="timeline-empty"></div>)
             skillsHTML.push(<div className="timeline-middle">
