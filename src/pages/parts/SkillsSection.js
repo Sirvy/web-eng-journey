@@ -96,7 +96,10 @@ const skillList = [
                 // WebSockets
             "Network security, Firewalls",
             "VPN",
-            "Application protocols (HTTP, SSH, FTP, ...)",
+            "Application protocols",
+                // HTTP, HTTPS
+                // FTP, SFTP
+                // SSH...
             "Web3",
                 // Blockchain
                 // Bitcoin
@@ -343,20 +346,30 @@ const skillList = [
         url: "courses/distributed",
         description: "Solve massive instances using heuristics, high performance parallel and distributed computing systems.",
         topics: [
-            "P vs. NP",
-            "Heuristics",
-            "Simulated annealing",
-            "Simulated evolution",
-            "Genetic algorithms",
-            "Parallel programming",
+            "Heuristics and optimization",
+                // P vs. NP
+                // Simulated annealing
+                // Simulated evolution
+                // Genetic algorithms
+            "Concurrency",
+                // Multithreading
+                // Multiprocessing
+                // Concurrency
+                // Forking
+                // Synchronization
+                // Task parallelism
+                // Data parallelism
             "OpenMP",
-            "Combinatorial searching",
             "Parallel algorithms",
-            "Parallel computing",
             "MPI",
             "Combinatorial topologies",
+                // Network topologies
+                // Routing strategy
+                // Fault tolerance
             "Distributed computing",
-            "Distributed algorithms"
+            "Distributed algorithms",
+            "Distributed systems",
+                // CAP theorem
         ]
     },
 
