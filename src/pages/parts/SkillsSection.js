@@ -2,10 +2,10 @@ import {Link} from "react-router-dom"
 
 const skillList = [
     {
-        title: "Programming Fundamentals and Problem Solving",
+        title: "Programming Fundamentals",
         small: "Learn to code. Learn to think.",
         url: "courses/programming",
-        description: "Understand the machine and use it to solve problems. Learn to think algorithmically.",
+        description: "Understand how computers work. Learn to code, think algorithmically, and develop systematic problem-solving skills.",
         topics: [
             "How Computers Work",
                 // Computer science basics
@@ -28,12 +28,12 @@ const skillList = [
                 // Problem decomposition and abstraction
         ]
     },
-    
+
     {
         title: "Mathematics for Engineers",
         small: "The Engineer's Mind. Math, Logic and Models.",
         url: "courses/math",
-        description: "The basic mathematical knowledge for computer science and analysis. The pillar of analytical thinking.",
+        description: "Speak the language of logic, probability and statistics. Build strong analytical thinking skills.",
         topics: [
             "Mathematical Prerequisites",
                 // The basics
@@ -69,7 +69,7 @@ const skillList = [
         title: "The Internet",
         small: "Understand the Web",
         url: "courses/internet",
-        description: "Understanding the web and the technologies behind it.",
+        description: "Understand the web and the technologies behind the internet — the network that changed the world.",
         topics: [
             "The Internet",
                 // History, structure, protocols
@@ -112,7 +112,7 @@ const skillList = [
         title: "Frontend Development",
         small: "The visible part that feels great.",
         url: "courses/frontend",
-        description: "Frontend development with HTML, CSS and JavaScript. GUI/UX design.",
+        description: "The visible part of the web — the aesthetics, the interfaces, the experience. Learn how websites and apps communicate with users through design, interaction, and the browser itself.",
         topics: [
             "GUI/UX design",
                 // Accessibility
@@ -139,7 +139,7 @@ const skillList = [
         title: "Backend Development",
         small: "The invisible part that works.",
         url: "courses/backend",
-        description: "Backend development with PHP, Java and JavaScript. REST API.",
+        description: "The invisible part that makes everything work — handling logic, data, security, and communication behind the scenes.",
         topics: [
             "Backend development",
                 // The basics
@@ -187,7 +187,7 @@ const skillList = [
         title: "Databases",
         small: "All the data",
         url: "courses/databases",
-        description: "Database systems for storing and efficient working with all kinds of data.",
+        description: "Learn how to design and use database systems for storing, managing, and accessing all kinds of data — efficiently and at scale.",
         topics: [
             "Database design",
             "SQL",
@@ -207,7 +207,7 @@ const skillList = [
         title: "Software Engineering",
         small: "Design large architectures",
         url: "courses/software-engineering",
-        description: "Real-world software engineering with Java technology.",
+        description: "The skill of designing large, real-world systems that are reliable, maintainable, testable, and built to last.",
         topics: [
             "Software design and analysis",
                 // UML
@@ -259,7 +259,7 @@ const skillList = [
         title: "Security and Hacking",
         small: "Protect the Web",
         url: "courses/security",
-        description: "Understanding the steps behind the most frequent attacks on web, being able to replicate them and to defend against them.",
+        description: "Understand how web attacks happen, how to defend against them, and how to secure systems and data by thinking like an attacker.",
         topics: [
             "Web security principles",
             "Secure coding practices",
@@ -284,7 +284,7 @@ const skillList = [
         title: "Cloud and DevOps",
         small: "The Infrastructure and Automation",
         url: "courses/devops",
-        description: "Master modern infrastructure management, automated deployments, and scalable cloud operations across AWS and Azure platforms.",
+        description: "Master the tools and practices behind cloud infrastructure, automation, and scalable deployments across AWS and Azure.",
         topics: [
             "Linux and Shell scripting",
             "Hosting",
@@ -293,6 +293,7 @@ const skillList = [
                 // Docker, Kubernetes
             "CI/CD and Automation",
                 // Jenkins
+                // GitHub Actions
             "Infrastructure as code",
             "Logging and monitoring",
                 // ELK stack
@@ -340,7 +341,7 @@ const skillList = [
         title: "Distributed Systems",
         small: "High performance computing",
         url: "courses/distributed",
-        description: "Solving massive instances using heuristics, high performance parallel and distributed computing systems.",
+        description: "Solve massive instances using heuristics, high performance parallel and distributed computing systems.",
         topics: [
             "P vs. NP",
             "Heuristics",

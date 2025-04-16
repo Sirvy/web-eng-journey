@@ -10,7 +10,7 @@ const Header = () => {
             <div className="container px-4 text-center">
                 <h1 className="center">The journey to</h1>
                 <h1 className="center highlight">Web Engineering</h1>
-                <p className="lead">Learn to think like an architect. Build like an engineer. Solve problems like a scientist.</p>
+                <p className="lead">Think like an architect. Build like an engineer. Solve problems like a scientist.</p>
             </div>
         </header>
     );
@@ -59,7 +59,6 @@ function HomePage() {
         <>
             <Background/>
             <Header/>
-            <Navigation/>
             <TheThreePillars/>
             <SkillsSection/>
         </>

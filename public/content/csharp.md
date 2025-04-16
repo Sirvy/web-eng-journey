@@ -1,6 +1,15 @@
 # .NET & C# Mastery
 
+> Documentation: https://learn.microsoft.com/en-us/dotnet/csharp/
+
+> DevBlogs: https://devblogs.microsoft.com/dotnet/
+
+> Patterns: https://refactoring.guru/design-patterns/csharp
+
+> Sources: https://github.com/dotnet
+
 ## Part I: The Core Language – C# Essentials
+
 
 1. **Introduction to C# and .NET**
    - History and Evolution
